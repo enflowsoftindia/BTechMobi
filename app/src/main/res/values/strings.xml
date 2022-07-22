@@ -2,8 +2,8 @@
     <string name="app_name">BTechMobi</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">BillerTech Mobi</string>
+    <string name="nav_header_subtitle">-</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -19,4 +19,12 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="login_title">BILLER TECH</string>
+    <string name="splash_bottomtext">Copyrights @ EnflowsoftIndia Solutions 2022</string>
+    <string name="username">"Username "</string>
+    <string name="menu_transaction">Transactions</string>
+    <string name="menu_sales">Sales</string>
+    <string name="menu_dc">Delivery Challan</string>
+    <string name="menu_statement_salesbill">Sales Bill</string>
+    <string name="menu_statement_outstanding">Sales Outstanding</string>
 </resources>

@@ -6,15 +6,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_home_green"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-    </group>
+           </group>
+
+    <item android:id="@+id/mnuadmin"
+        android:title="@string/menu_transaction">
+        <menu>
+            <item android:id="@+id/mnusales"
+                android:title="@string/menu_sales"
+                android:visible="true"
+                android:icon="@drawable/ic_baseline_point_of_sale_green"/>
+            <item android:id="@+id/mnudelivery"
+                android:title="@string/menu_dc"
+                android:visible="true"
+                android:icon="@drawable/ic_baseline_dc_green"/>
+        </menu>
+    </item>
+    <item android:id="@+id/mnureports"
+        android:title="@string/menu_transaction">
+        <menu>
+            <item android:id="@+id/mnusalesstatement"
+                android:title="@string/menu_statement_salesbill"
+                android:visible="true"
+                android:icon="@drawable/ic_baseline_menu_book_24"/>
+            <item android:id="@+id/mnuoutstandingstatement"
+                android:title="@string/menu_statement_outstanding"
+                android:visible="true"
+                android:icon="@drawable/ic_baseline_menu_book_24"/>
+
+        </menu>
+    </item>
 </menu>

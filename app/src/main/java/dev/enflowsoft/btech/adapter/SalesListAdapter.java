@@ -45,14 +45,14 @@ public class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.Sale
             txt_customername = view.findViewById(R.id.txt_customername);
             txt_invoicedate = view.findViewById(R.id.txt_invoicedate);
             txt_totalamount = view.findViewById(R.id.txt_totalamount);
-            layout_root = view.findViewById(R.id.list_nursery_product);
+            layout_root = view.findViewById(R.id.list_layout_sales);
             layout_root.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.list_nursery_product:
+                case R.id.list_layout_sales:
                     callback.itemClick(getAdapterPosition());
                     break;
             }

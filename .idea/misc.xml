@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14322916666666666" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1875" />
+        <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout-w936dp/list_delivery.xml" value="0.5783132530120482" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/activity_login_main.xml" value="0.3714821763602251" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -15,6 +16,7 @@
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/delivery_list_fragment.xml" value="0.2222222222222222" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/home_fragment.xml" value="0.25" />
+        <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/list_delivery.xml" value="0.25" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/list_sales.xml" value="0.536" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/nav_header_main.xml" value="0.536" />
         <entry key="..\:/BillerTech2/MobileApp/Project/app/src/main/res/layout/sales_data_fragment.xml" value="0.25" />

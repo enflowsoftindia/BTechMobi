@@ -9,17 +9,24 @@
         android:id="@+id/nav_home"
         android:name="dev.enflowsoft.btech.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/nav_saleslist"
+        android:name="dev.enflowsoft.btech.ui.home.HomeFragment"
+        android:label="@string/menu_sales"
+        tools:layout="@layout/sales_list_fragment" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="dev.enflowsoft.btech.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_deliverylist"
+        android:name="dev.enflowsoft.btech.ui.home.HomeFragment"
+        android:label="@string/menu_dc"
+        tools:layout="@layout/delivery_list_fragment" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="dev.enflowsoft.btech.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_outstandingstatement"
+        android:name="dev.enflowsoft.btech.ui.home.HomeFragment"
+        android:label="@string/menu_statement_outstanding"
+        tools:layout="@layout/statement_outstanding_fragment" />
+
+
 </navigation>

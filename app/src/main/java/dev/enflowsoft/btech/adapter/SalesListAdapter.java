@@ -27,8 +27,8 @@ public class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.Sale
     Callback callback;
     Context ctx;
     String checkedPos = "";
-    private int[] colors = new int[] {Color.GRAY, Color.WHITE };
-    private int[] forecolors = new int[] {Color.WHITE, Color.BLACK };
+    private int[] colors = new int[]{Color.GRAY, Color.WHITE};
+    private int[] forecolors = new int[]{Color.WHITE, Color.BLACK};
 
     public class SalesListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -37,6 +37,7 @@ public class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.Sale
         public TextView txt_customername;
         public TextView txt_invoicedate;
         public TextView txt_totalamount;
+        public TextView txt_sno;
 
         public SalesListViewHolder(View view) {
             super(view);
@@ -45,6 +46,7 @@ public class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.Sale
             txt_customername = view.findViewById(R.id.txt_customername);
             txt_invoicedate = view.findViewById(R.id.txt_invoicedate);
             txt_totalamount = view.findViewById(R.id.txt_totalamount);
+            txt_sno = view.findViewById(R.id.txt_sales_sno);
             layout_root = view.findViewById(R.id.list_layout_sales);
             layout_root.setOnClickListener(this);
         }
@@ -76,23 +78,23 @@ public class SalesListAdapter extends RecyclerView.Adapter<SalesListAdapter.Sale
         try {
             int colorPos = position % colors.length;
             int forecolorPos = position % colors.length;
-            holder.itemView.setBackgroundColor(colors[colorPos]);
+            // holder.itemView.setBackgroundColor(colors[colorPos]);
 
             SalesListResponse sales = salesListFilter.get(position);
-                        String strDt = sales.getTransDate().toString().replace("T00:00:00", "");;
-
+            String strDt = sales.getTransDate().toString().replace("T00:00:00", "");
 
             holder.txt_invoiceno.setText(String.valueOf(sales.getTransNo()));
             holder.txt_invoicedate.setText(strDt);
             holder.txt_customername.setText(String.valueOf(sales.getPartyName()));
+            holder.txt_sno.setText(String.valueOf(position + 1));
 
             Listchildvm listchild = sales.getListchildvm().get(0);
             holder.txt_totalamount.setText(String.valueOf(listchild.getAmount()));
 
-            holder.txt_invoiceno.setTextColor(forecolors[forecolorPos]);
-            holder.txt_invoicedate.setTextColor(forecolors[forecolorPos]);
-            holder.txt_customername.setTextColor(forecolors[forecolorPos]);
-            holder.txt_totalamount.setTextColor(forecolors[forecolorPos]);
+            // holder.txt_invoiceno.setTextColor(forecolors[forecolorPos]);
+            // holder.txt_invoicedate.setTextColor(forecolors[forecolorPos]);
+            // holder.txt_customername.setTextColor(forecolors[forecolorPos]);
+            // holder.txt_totalamount.setTextColor(forecolors[forecolorPos]);
 
         } catch (Exception e) {
             Log.d("Bind Error", e.getMessage());

@@ -24,8 +24,8 @@ public class DeliveryListAdapter extends RecyclerView.Adapter<DeliveryListAdapte
     Callback callback;
     Context ctx;
     String checkedPos = "";
-    private int[] colors = new int[] {Color.GRAY, Color.WHITE };
-    private int[] forecolors = new int[] {Color.WHITE, Color.BLACK };
+    private int[] colors = new int[]{Color.GRAY, Color.WHITE};
+    private int[] forecolors = new int[]{Color.WHITE, Color.BLACK};
 
     public class DeliveryListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -33,6 +33,7 @@ public class DeliveryListAdapter extends RecyclerView.Adapter<DeliveryListAdapte
         public TextView txt_issueno;
         public TextView txt_issuedate;
         public TextView txt_partyname;
+        public TextView txt_sno;
 
         public DeliveryListViewHolder(View view) {
             super(view);
@@ -40,6 +41,7 @@ public class DeliveryListAdapter extends RecyclerView.Adapter<DeliveryListAdapte
             txt_issueno = view.findViewById(R.id.txt_issueno);
             txt_issuedate = view.findViewById(R.id.txt_issuedate);
             txt_partyname = view.findViewById(R.id.txt_partyname);
+            txt_sno = view.findViewById(R.id.txt_dc_sno);
             layout_root = view.findViewById(R.id.list_layout_delivery);
             layout_root.setOnClickListener(this);
         }
@@ -69,22 +71,15 @@ public class DeliveryListAdapter extends RecyclerView.Adapter<DeliveryListAdapte
     @Override
     public void onBindViewHolder(DeliveryListViewHolder holder, final int position) {
         try {
-            int colorPos = position % colors.length;
-            int forecolorPos = position % colors.length;
-            holder.itemView.setBackgroundColor(colors[colorPos]);
-
             DeliveryListResponse delivery = deliveryListFilter.get(position);
-                        String strDt = delivery.getIssueDate().toString().replace("T00:00:00", "");;
+            String strDt = delivery.getIssueDate().toString().replace("T00:00:00", "");
 
-
-            holder.txt_issueno.setText(String.valueOf(delivery.getIssueNo()));
+                        holder.txt_issueno.setText(String.valueOf(delivery.getIssueNo()));
             holder.txt_issuedate.setText(strDt);
             holder.txt_partyname.setText(String.valueOf(delivery.getPartyName()));
+            holder.txt_sno.setText(String.valueOf(position + 1));
 
             Listchildvm listchild = delivery.getListchildvm().get(0);
-            holder.txt_issueno.setTextColor(forecolors[forecolorPos]);
-            holder.txt_issuedate.setTextColor(forecolors[forecolorPos]);
-            holder.txt_partyname.setTextColor(forecolors[forecolorPos]);
 
         } catch (Exception e) {
             Log.d("Bind Error", e.getMessage());

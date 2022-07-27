@@ -19,7 +19,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@drawable/side_nav_bar"
+                android:background="@drawable/title_bar"
                 app:popupTheme="@style/Theme.BTechMobi.PopupOverlay" />
 
             <ImageView
@@ -44,7 +44,7 @@
                 android:id="@+id/toolbar_signin"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="#4DB6AC"
+                android:background="@color/transparent"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"

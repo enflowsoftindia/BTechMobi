@@ -20,7 +20,7 @@
             <item android:id="@+id/mnudelivery"
                 android:title="@string/menu_dc"
                 android:visible="true"
-                android:icon="@drawable/ic_baseline_dc_green"/>
+                android:icon="@drawable/ic_baseline_delivery_black"/>
         </menu>
     </item>
     <item android:id="@+id/mnureports"

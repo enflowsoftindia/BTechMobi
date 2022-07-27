@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import dev.enflowsoft.btech.MainActivity;
@@ -26,7 +27,8 @@ import dev.enflowsoft.btech.ui.statement.OutstandingFragment;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
-    Button btnSaleslist, btnDelivery, btnOutstandingstatement;
+    ImageButton btnSaleslist, btnDelivery;
+    Button btnOutstandingstatement;
     Fragment currentFragment;
 
     public static HomeFragment newInstance() {
@@ -38,8 +40,8 @@ public class HomeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View fragmentview = inflater.inflate(R.layout.home_fragment, container, false);
 
-        btnSaleslist = (Button) fragmentview.findViewById(R.id.home_menu_sales);
-        btnDelivery = (Button) fragmentview.findViewById(R.id.home_menu_delivery);
+        btnSaleslist = (ImageButton) fragmentview.findViewById(R.id.home_menu_sales);
+        btnDelivery = (ImageButton) fragmentview.findViewById(R.id.home_menu_delivery);
         btnOutstandingstatement = (Button) fragmentview.findViewById(R.id.home_menu_salesoutstanding);
 
         btnSaleslist.setOnClickListener(new View.OnClickListener() {

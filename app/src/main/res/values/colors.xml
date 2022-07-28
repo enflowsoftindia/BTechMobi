@@ -2,6 +2,7 @@
 <resources>
     <color name="green_light">#5FD663</color>
     <color name="green_dark">#4CAF50</color>
+    <color name="green_dark_most">#105312</color>
     <color name="blue_light">#15B1F8</color>
     <color name="blue_slimlight">#74CCF4</color>
     <color name="grey_light">#BBC1C0</color>

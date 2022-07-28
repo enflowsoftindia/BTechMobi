@@ -14,7 +14,11 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         TextView drawerFinyear = (TextView) headerView.findViewById(R.id.txtSubtitleFinyear);
         drawerCompany.setText(navbarCompany);
         drawerFinyear.setText(navbarFinyear);
+
+        hideSystemBars();
     }
 
     @Override
@@ -105,6 +111,22 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(false);
+            builder.setMessage("Do you want to Exit?");
+            builder.setPositiveButton("Yes", (dialog, which) -> finish());
+            builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+    }
+
     public void setMyFragment(Fragment fragment) {
 
         if (!isHome) {
@@ -132,6 +154,20 @@ public class MainActivity extends AppCompatActivity
         } catch (Exception ex) {
             Log.d("Clear Home Fragment", ex.getMessage());
         }
+    }
+
+    private void hideSystemBars() {
+        WindowInsetsControllerCompat windowInsetsController =
+                ViewCompat.getWindowInsetsController(getWindow().getDecorView());
+        if (windowInsetsController == null) {
+            return;
+        }
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        );
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
     }
 
 }

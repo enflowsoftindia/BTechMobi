@@ -38,6 +38,7 @@
                 android:layout_centerVertical="true"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@color/green_light"
                 android:layout_toRightOf="@id/imgLogo"/>
 
             <ImageButton

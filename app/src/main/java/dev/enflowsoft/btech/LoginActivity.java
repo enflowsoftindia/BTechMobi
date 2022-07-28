@@ -56,8 +56,18 @@ public class LoginActivity extends AppCompatActivity {
 
         loginService = APIUtils.postUserLogin();
         try {
+            doLoadingWork();
             usersession = getSharedPreferences(UserSession, Context.MODE_PRIVATE);
+            Boolean isLoggedIn = usersession.getBoolean("isloggedin", false);
+            if(isLoggedIn){
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                stopLoadingWork();
+                finish();
+            }
+            stopLoadingWork();
         } catch (Exception ex) {
+            stopLoadingWork();
             Log.e("Session Error", ex.getMessage());
         }
 
@@ -148,6 +158,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.putInt("finyearid", model.getFinyearId());
         editor.putString("finyearname", model.getFinyearName());
         editor.putString("username", username);
+        editor.putBoolean("isloggedin", true);
         editor.commit();
     }
 

@@ -1,12 +1,14 @@
 package dev.enflowsoft.btech;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity
     public Fragment currentFragment;
     public boolean isHome;
 
+    ImageButton toolbar_signout;
+
     /* SESSIONS */
     SharedPreferences usersession;
     public static final String UserSession = "UserSession";
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         usersession = this.getSharedPreferences(MainActivity.UserSession, Context.MODE_PRIVATE);
-        String navbarFinyear = usersession.getString("username","").toUpperCase() + " - " + usersession.getString("finyearname","").toUpperCase();
-        String navbarCompany=usersession.getString("companyunitname","").toUpperCase();
+        String navbarFinyear = usersession.getString("username", "").toUpperCase() + " - " + usersession.getString("finyearname", "").toUpperCase();
+        String navbarCompany = usersession.getString("companyunitname", "").toUpperCase();
 
         View headerView = navigationView.getHeaderView(0);
         TextView drawerCompany = (TextView) headerView.findViewById(R.id.txtSubtitleCompany);
@@ -68,6 +72,19 @@ public class MainActivity extends AppCompatActivity
         drawerCompany.setText(navbarCompany);
         drawerFinyear.setText(navbarFinyear);
 
+        toolbar_signout = findViewById(R.id.toolbar_signout);
+        toolbar_signout.setOnClickListener(v -> {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(false);
+            builder.setMessage("Do you want to Logout?");
+            builder.setPositiveButton("Yes", (dialog, which) ->Logout());
+            builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+            AlertDialog alert = builder.create();
+            alert.show();
+
+
+        });
         hideSystemBars();
     }
 
@@ -92,17 +109,15 @@ public class MainActivity extends AppCompatActivity
             DeliveryListFragment fragment = new DeliveryListFragment();
             setMyFragment(fragment);
 
-        }
-        else if (id == R.id.mnusalesstatement) {
+        } else if (id == R.id.mnusalesstatement) {
             // SalesListFragment fragment = new SalesListFragment();
             // setMyFragment(fragment);
-            return  false;
-        }
-        else if (id == R.id.mnuoutstandingstatement) {
+            return false;
+        } else if (id == R.id.mnuoutstandingstatement) {
             OutstandingFragment fragment = new OutstandingFragment();
             setMyFragment(fragment);
 
-        }else if (id == R.id.mnusales) {
+        } else if (id == R.id.mnusales) {
             SalesListFragment fragment = new SalesListFragment();
             setMyFragment(fragment);
         }
@@ -168,6 +183,15 @@ public class MainActivity extends AppCompatActivity
         );
         // Hide both the status bar and the navigation bar
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
+    }
+
+    private void Logout(){
+        SharedPreferences.Editor editor = usersession.edit();
+        editor.clear();
+        editor.commit();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

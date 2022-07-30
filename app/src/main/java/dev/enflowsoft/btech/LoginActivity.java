@@ -122,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            Toast.makeText(LoginActivity.this, "Try Login Again", Toast.LENGTH_SHORT).show();
                             Log.v("LOGIN ERROR", t.toString());
                             stopLoadingWork();
                         }

@@ -2,6 +2,7 @@ package dev.enflowsoft.btech.remote;
 
 import dev.enflowsoft.btech.interfaces.IDeliveryService;
 import dev.enflowsoft.btech.interfaces.ILoginService;
+import dev.enflowsoft.btech.interfaces.IMasterService;
 import dev.enflowsoft.btech.interfaces.ISalesService;
 import dev.enflowsoft.btech.interfaces.ProductService;
 
@@ -23,6 +24,10 @@ public class APIUtils {
 
     public static IDeliveryService postDelivery(){
         return RetrofitClient.getClient(API_URL).create(IDeliveryService.class);
+    }
+
+    public static IMasterService postMasters(){
+        return RetrofitClient.getClient(API_URL).create(IMasterService.class);
     }
 
     public static ProductService getProductService(){

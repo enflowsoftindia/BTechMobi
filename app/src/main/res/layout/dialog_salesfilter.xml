@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="Filter from "
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/design_default_color_secondary_variant"
+            android:padding="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Item Code"/>
+        <Spinner
+            android:id="@+id/spn_ItemCode"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            tools:listitem="@layout/lst_sales_itemcode"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/grey_dark"
+            android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+            android:spinnerMode="dropdown"
+            android:visibility="invisible">
+
+        </Spinner>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Customer Name"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/autotxt_searchcustomer"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/textboxgrey"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Search Customer...."
+            android:paddingLeft="10dp"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Date From"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Date To"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:id="@+id/sales_fromDate"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2sp"
+                android:background="@drawable/title_bar"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:paddingTop="4sp"
+                android:paddingLeft="4sp"
+                android:paddingBottom="4sp"
+                android:textAlignment="center"
+                android:text="dd/mm/yyyy"
+                android:textSize="13dp"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:id="@+id/sales_toDate"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2sp"
+                android:background="@drawable/title_bar"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:paddingTop="4sp"
+                android:paddingLeft="4sp"
+                android:paddingBottom="4sp"
+                android:textAlignment="center"
+                android:text="dd/mm/yyyy"
+                android:textSize="13dp"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

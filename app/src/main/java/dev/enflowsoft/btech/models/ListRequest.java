@@ -3,7 +3,7 @@ package dev.enflowsoft.btech.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SalesListRequest {
+public class ListRequest {
 
     @SerializedName("CompanyId")
     @Expose

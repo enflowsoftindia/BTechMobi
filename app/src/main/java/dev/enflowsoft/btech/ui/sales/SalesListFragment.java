@@ -97,12 +97,7 @@ public class SalesListFragment extends Fragment {
         salesService = APIUtils.postSales();
         masterService = APIUtils.postMasters();
 
-        selectedCustomerId = 0;
-        selectedPageSize = "";
-        selectedCustomer = "";
-        selectedItemCode = " ";
-        searchFromDate = "";
-        searchToDate = "";
+        ResetFilters();
 
         spnSalesPageSize = (Spinner) fragmentview.findViewById(R.id.spnSalesPageSize);
         spnItemCode = (Spinner) fragmentview.findViewById(R.id.spn_ItemCode);
@@ -244,6 +239,14 @@ public class SalesListFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
+            }
+        });
+
+        dialogProduct.setNeutralButton("CLEAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ResetFilters();
+                loadSales(fragmentvew);
             }
         });
 
@@ -404,6 +407,15 @@ public class SalesListFragment extends Fragment {
         spnSalesPageSize.setAdapter(adapter);
         spnSalesPageSize.setVisibility(View.VISIBLE);
         // spnSalesPageSize.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary_variant));
+    }
+
+    private void ResetFilters(){
+        selectedCustomerId = 0;
+        selectedPageSize = "";
+        selectedCustomer = "";
+        selectedItemCode = " ";
+        searchFromDate = "";
+        searchToDate = "";
     }
 
 }

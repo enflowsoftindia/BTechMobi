@@ -99,12 +99,7 @@ public class DeliveryListFragment extends Fragment {
         deliveryService = APIUtils.postDelivery();
         masterService = APIUtils.postMasters();
 
-        selectedCustomerId = 0;
-        selectedPageSize = "";
-        selectedCustomer = "";
-        selectedItemCode = " ";
-        searchFromDate = "";
-        searchToDate = "";
+        ResetFilters();
 
         fab_adddelivery = (FloatingActionButton) fragmentview.findViewById(R.id.fab_adddc);
         fab_filterdc = (FloatingActionButton) fragmentview.findViewById(R.id.fab_filterdc);
@@ -248,6 +243,15 @@ public class DeliveryListFragment extends Fragment {
                 dialog.dismiss();
             }
         });
+
+        dialogProduct.setNeutralButton("CLEAR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                ResetFilters();
+                loadDelivery(fragmentvew);
+            }
+        });
+
         dialogProduct.setView(mView);
         dialogProduct.show();
     }
@@ -408,4 +412,12 @@ public class DeliveryListFragment extends Fragment {
         // spnSalesPageSize.setBackgroundColor(getResources().getColor(R.color.design_default_color_secondary_variant));
     }
 
+    private void ResetFilters(){
+        selectedCustomerId = 0;
+        selectedPageSize = "";
+        selectedCustomer = "";
+        selectedItemCode = " ";
+        searchFromDate = "";
+        searchToDate = "";
+    }
 }

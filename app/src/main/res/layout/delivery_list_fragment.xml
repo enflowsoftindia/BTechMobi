@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.delivery.DeliveryListFragment">
 
     <RelativeLayout
@@ -29,6 +30,22 @@
                 android:textStyle="bold|italic"
                 android:typeface="normal" />
 
+            <Spinner
+                android:id="@+id/spnDCPageSize"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="end"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="fill_parent"
+                android:visibility="invisible"
+                tools:listitem="@layout/list_pagesize">
+
+            </Spinner>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -72,20 +89,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
-            android:foreground="@drawable/ic_baseline_add_24"
+            android:src="@drawable/ic_baseline_add_24"
             android:tint="#FFFFFF"
-            android:backgroundTint="@color/green_dark_most"
+            app:maxImageSize="40sp"
+            android:backgroundTint="@color/black"
             tools:ignore="UnusedAttribute" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_filterdc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            android:foreground="@drawable/ic_baseline_filter_white"
-            android:tint="#FFFFFF"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
             android:layout_toLeftOf="@+id/fab_adddc"
-            android:backgroundTint="@color/green_dark_most"
+            android:src="@drawable/ic_baseline_filter_list_white"
+            android:tint="#FFFFFF"
+            app:maxImageSize="40sp"
+            android:backgroundTint="@color/black"
             tools:ignore="UnusedAttribute" />
     </RelativeLayout>
 
